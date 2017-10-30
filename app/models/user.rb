@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   include BCrypt
 
-  has_many :posts
-  has_many :comments
+  has_many :posts, foreign_key: :author_id, class_name: "Post"
+  has_many :comments, foreign_key: :commentor_id, class_name: "Comment"
 
   validates :username, presence: true, length: { minimum: 5 }
   validates :email, presence: true

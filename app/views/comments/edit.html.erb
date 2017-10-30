@@ -1,0 +1,13 @@
+<div id="page-wrapper">
+  <h3>Edit Comment</h3>
+  <%= form_for ([@post, @comment]) do |f| %>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+  <%= f.submit %>
+  </p>
+
+<% end %>
+</div>

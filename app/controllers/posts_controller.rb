@@ -4,11 +4,14 @@ class PostsController < ApplicationController
   end
 
   def new
+    authenticate!
     @post = Post.new
   end
 
   def create
+    authenticate!
     @post = Post.new(post_params)
+    @post.author = current_user
     if @post.save
       redirect_to @post
     else
@@ -21,11 +24,14 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authenticate!
     @post = Post.find(params[:id])
   end
 
   def update
+    authenticate!
     @post = Post.find(params[:id])
+    authorize!(@post.author)
     if @post.update(params[:post].permit(:title, :body))
       redirect_to @post
     else
@@ -34,7 +40,9 @@ class PostsController < ApplicationController
   end 
 
   def destroy
+    authenticate!
     @post = Post.find(params[:id])
+    authorize!(@post.author)
     @post.destroy
     redirect_to root_path
   end

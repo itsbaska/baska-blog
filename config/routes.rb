@@ -18,13 +18,17 @@ Rails.application.routes.draw do
   post 'posts/:post_id/comments', to: 'comments#create'
   get 'posts/:post_id/comments/:id', to: 'comments#show', as: 'post_comment'
   get 'posts/:post_id/comments/:id/edit', to: 'comments#edit', as: 'edit_post_comment'
-  put 'posts/:post_id/comments/:id', to: 'comments#update'
+  patch 'posts/:post_id/comments/:id', to: 'comments#update'
   delete 'posts/:post_id/comments/:id', to: 'comments#destroy'
 
   get 'about', to: 'pages#about'
 
+  get 'not_authorized', to: 'pages#not_authorized'
+
   get 'register', to: 'users#new', as: 'new_user'
   post 'users', to: 'users#create'
+  get 'users/:id', to: 'users#show', as: 'user'
+
 
 
   get 'login', to: 'sessions#new'
