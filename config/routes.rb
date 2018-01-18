@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   patch 'posts/:id', to: 'posts#update'
   delete 'posts/:id', to: 'posts#destroy'
 
-  root "posts#index"
+  root "pages#about"
   
   get 'posts/:post_id/comments', to: 'comments#index', as: 'post_comments'
   get 'posts/:post_id/comments/new', to: 'comments#new', as: 'new_post_comment' 
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   delete 'posts/:post_id/comments/:id', to: 'comments#destroy'
 
   get 'about', to: 'pages#about'
-
+  get 'resume', to: 'pages#resume'
   get 'not_authorized', to: 'pages#not_authorized'
 
   get 'register', to: 'users#new', as: 'new_user'

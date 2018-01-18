@@ -1,34 +1,64 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html {
+  background-color: #e25957;
+}
 
+.container {
+  background-color: #fff;
+  filter: drop-shadow(0 10px 10px #333);
+  padding: 5%;
+  margin: 5%;
+  box-sizing: border-box;
+}
 
-/*#sidebar {
-  width: 250px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  padding: 7em 0 0 0;
-  border-right: 1px solid gray;*/
-  #logo img {
-    width: 50px;
-    position: absolute;
-    right: 3em;
-    top: 3em;
-  }
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+}
+
+.sign {
+  color: #fff;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+}
+
+.sign h1 {
+  font-size: 8em;
+  padding-bottom: 0;
+}
+
+.sign h2 {
+  font-size: 2em;
+}
+
+#logo img {
+  width: 50px;
+  position: absolute;
+  right: 3em;
+  top: 3em;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+nav ul {
+  padding-left: 0;
+}
+
+nav li {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav a {
+  text-decoration: none;
+}
+
 /*  ul {
     list-style: none;
     text-align: right;
