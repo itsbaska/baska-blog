@@ -85,7 +85,7 @@ nav a:visited,
 }
 
 .resume-row h2 {
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 700;
   letter-spacing: 1.5px;
 }
@@ -118,4 +118,18 @@ nav a:visited,
 .contact {
   text-align: center;
   font-weight: 300;
+}
+
+.baska a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.baska a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.baska a:hover {
+  border-bottom: 4px solid #fff;
 }
