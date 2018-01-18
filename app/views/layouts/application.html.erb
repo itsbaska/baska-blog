@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>Hire me!</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script src="https://use.fontawesome.com/0cfcb9aae2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,400,900" rel="stylesheet">
+
   </head>
 
   <body>
+    <div class="sign">
+      <h1>hire me!</h1>
+      <h2>my name is <span class="baska"><%= link_to "baska", root_path %></span>, i am a developer</h2>
+    </div>
+    <div class="container">
       <div id="sidebar">
-        <div id="logo">
-          <%= link_to root_path do %>
-            <%= image_tag "logo.png" %>
-          <% end %>
-        </div>
-        <ul>
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to"About", about_path %></li>
-          <% if logged_in? %>
-            <li><%= link_to"Profile", user_path(current_user) %></li>
-          <% end %>
-        </ul>
-      </div>
-      <div id="main-content">
-        <div id="header">
-          <% if current_page?(root_path) %>
-              <p>All Posts</p>
-            <% elsif current_page?(about_path) %>
-              <p>About</p>
-            <% else %>
-              <p><%= link_to "Back to all posts", root_path %></p>
-            <% end %>
-          <div class="buttons">
-            <button class="button"><%= link_to "New Post", new_post_path %></button>
+        <nav>
+          <ul>
+            <li><%= link_to "home", root_path %></li>
+            <li><%= link_to "resume", resume_path %></li>
+            <li><%= link_to "contact", contact_path %></li>
+
             <% if logged_in? %>
-              <button class="button"><%= link_to "Logout", logout_path, method: :delete %></button>
-            <% else %>
-              <button class="button"><%= link_to "Register", new_user_path %></button>
-              <button class="button"><%= link_to "Login", login_path %></button>
+              <li><%= link_to"Profile", user_path(current_user) %></li>
             <% end %>
-          </div>
+          </ul>
+        </nav>
         </div>
-        <% flash.each do |name, message| %>
-          <%= content_tag(:div, message, class: "alert") %>
-        <% end %>
-        <%= yield %>
+        <div id="main-content">
+          <div id="header">
+            <div class="buttons">
+              <% if logged_in?%>
+                <button class="button"><%= link_to "New Post", new_post_path %></button>
+                <button class="button"><%= link_to "Logout", logout_path, method: :delete %></button>
+              <% end %>
+            </div>
+          </div>
+          <% flash.each do |name, message| %>
+            <%= content_tag(:div, message, class: "alert") %>
+          <% end %>
+        </div>
       </div>
+      <%= yield %>
   </body>
 </html>

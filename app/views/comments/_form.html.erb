@@ -1,6 +1,9 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <p>
-    <%= f.label :body %>
+    <%= f.label "Name" %>
+    <%= f.text_field :guest_name %>
+  </p>
+  <p>
     <%= f.text_area :body %>
   </p>
   <p>

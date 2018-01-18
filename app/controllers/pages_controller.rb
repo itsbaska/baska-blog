@@ -4,4 +4,10 @@ class PagesController < ApplicationController
 
   def not_authorized
   end
+
+  def resume
+  end
+
+  def contact
+  end
 end

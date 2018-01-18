@@ -1,15 +1,20 @@
 <div class="comment">
   <div class="comment-content">
-    <span class="comment-body"><%= comment.body %></span>
-    <span class="comment-time"><%= time_ago_in_words(comment.created_at) %> ago</span> by 
-    <span class="comment-commentor"><%= link_to comment.commentor.username, user_path(comment.commentor) %></span>
-    <% if authorized?(comment.commentor) %>
-    | <%= link_to 'Edit', edit_post_comment_path(comment.post, comment) %>
-    | <%= link_to 'Delete', [comment.post, comment],
+    <p class="comment-body"><%= comment.body %></p>
+    <p class="comment-time"><%= time_ago_in_words(comment.created_at) %> ago by
+    <% if comment.commentor %> 
+        <span class="comment-commentor"><%= link_to comment.commentor.username, user_path(comment.commentor) %></span>
+        <% if authorized?(comment.commentor) %>
+        | <%= link_to 'Edit', edit_post_comment_path(comment.post, comment) %>
+        | <%= link_to 'Delete', [comment.post, comment],
                 method: :delete,
                 class: "button",
                 data: {confirm: 'Are you sure?'} %>
-    <% end %>   
+        <% end %>  
+        <% else %>
+            <span class="comment-commentor"><%= comment.guest_name%></span>
+        <% end %>
+    </p>
   </div>  
 </div>
 

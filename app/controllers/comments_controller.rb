@@ -1,12 +1,20 @@
 class CommentsController < ApplicationController
 
   def create
-    authenticate!
+    # authenticate!
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.new(params[:comment].permit(:body))
-    @comment.commentor = current_user
-    @comment.save
-    redirect_to post_path(@post)
+    @comment = @post.comments.new(params[:comment].permit(:body, :guest_name))
+    
+    current_user ? @comment.commentor = current_user : @comment.commentor = nil
+    if @comment.save
+      ep "i saved"
+      redirect_to post_path(@post)
+    else
+      flash[:notice] = "Error creating comment: #{@comment.errors.full_messages}"
+      # render "posts/show"
+      redirect_to(@post) and return
+
+    end
   end
 
   def edit

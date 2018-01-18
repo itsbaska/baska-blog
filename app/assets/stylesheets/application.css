@@ -1,50 +1,135 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html {
+  background-color: #e25957;
+  font-family: 'Lato', sans-serif;
+}
 
+.container {
+  background-color: #fff;
+  filter: drop-shadow(0 10px 10px #5b1615);
+  padding: 5%;
+  margin: 5%;
+  box-sizing: border-box;
+}
 
-/*#sidebar {
-  width: 250px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  padding: 7em 0 0 0;
-  border-right: 1px solid gray;*/
-  #logo img {
-    width: 50px;
-    position: absolute;
-    right: 3em;
-    top: 3em;
-  }
-/*  ul {
-    list-style: none;
-    text-align: right;
-    padding-right: 3em;
-    .category {
-      font-weight: 700;
-      font-size: 0.7em;
-      text-transform: uppercase;
-      color: #33acb7;
-    }
-    li {
-      padding: .5em 0;
-      a {
-        color: #9eafba;
-        text-decoration: none;
-      }
-    }
-  }
-}*/
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+nav ul {
+  display: flex;
+  padding: 0;
+}
+
+nav li {
+  width: 30px;
+  list-style: none;
+  margin: 0 25px;
+  padding: 0;
+}
+
+nav a:link,
+.contact a:link {
+  text-decoration: none;
+  color: #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+}
+
+nav a:visited,
+.contact a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+.sign {
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+}
+
+.sign h1 {
+  font-size: 8em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.sign h2 {
+  font-size: 2em;
+}
+
+#logo img {
+  width: 50px;
+  position: absolute;
+  right: 3em;
+  top: 3em;
+}
+
+.resume-row h1 {
+  color: #e25957;
+}
+
+.resume-row h2 {
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.resume-row h3 {
+  padding: 0;
+  font-size: 0.8em;
+  letter-spacing: 1.5px;
+  color: #494c4c;
+  font-style: italic;
+}
+
+.experience li {
+  padding-bottom: 20px;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.skills li {
+  /*display: flex;*/
+  padding: 0;
+}
+
+.contact {
+  text-align: center;
+  font-weight: 300;
+}
+
+.baska a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.baska a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.baska a:hover {
+  border-bottom: 4px solid #fff;
+}
