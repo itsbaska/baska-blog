@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get 'about', to: 'pages#about'
   get 'resume', to: 'pages#resume'
+  get 'contact', to: 'pages#contact'
+
   get 'not_authorized', to: 'pages#not_authorized'
 
   get 'register', to: 'users#new', as: 'new_user'

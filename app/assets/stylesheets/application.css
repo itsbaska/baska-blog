@@ -1,30 +1,72 @@
 html {
   background-color: #e25957;
+  font-family: 'Lato', sans-serif;
 }
 
 .container {
   background-color: #fff;
-  filter: drop-shadow(0 10px 10px #333);
+  filter: drop-shadow(0 10px 10px #5b1615);
   padding: 5%;
   margin: 5%;
   box-sizing: border-box;
 }
 
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
 h1 {
+  font-weight: 900;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+nav ul {
+  display: flex;
+  padding: 0;
+}
+
+nav li {
+  width: 30px;
+  list-style: none;
+  margin: 0 25px;
+  padding: 0;
+}
+
+nav a:link,
+.contact a:link {
+  text-decoration: none;
+  color: #000;
   font-family: 'Lato', sans-serif;
   font-weight: 900;
+}
+
+nav a:visited,
+.contact a:visited {
+  text-decoration: none;
+  color: #000;
 }
 
 .sign {
   color: #fff;
   text-align: center;
-  font-family: 'Lato', sans-serif;
   font-weight: 900;
 }
 
 .sign h1 {
   font-size: 8em;
   padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .sign h2 {
@@ -38,43 +80,42 @@ h1 {
   top: 3em;
 }
 
-nav {
+.resume-row h1 {
+  color: #e25957;
+}
+
+.resume-row h2 {
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.resume-row h3 {
+  padding: 0;
+  font-size: 0.8em;
+  letter-spacing: 1.5px;
+  color: #494c4c;
+  font-style: italic;
+}
+
+.experience li {
+  padding-bottom: 20px;
+}
+
+.skills-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
 }
 
-nav ul {
-  padding-left: 0;
+.skills li {
+  /*display: flex;*/
+  padding: 0;
 }
 
-nav li {
-  list-style: none;
-  padding-left: 0;
+.contact {
+  text-align: center;
+  font-weight: 300;
 }
-
-nav a {
-  text-decoration: none;
-}
-
-/*  ul {
-    list-style: none;
-    text-align: right;
-    padding-right: 3em;
-    .category {
-      font-weight: 700;
-      font-size: 0.7em;
-      text-transform: uppercase;
-      color: #33acb7;
-    }
-    li {
-      padding: .5em 0;
-      a {
-        color: #9eafba;
-        text-decoration: none;
-      }
-    }
-  }
-}*/
