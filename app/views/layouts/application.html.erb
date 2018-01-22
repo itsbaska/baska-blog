@@ -14,22 +14,19 @@
   <body>
     <div class="sign">
       <h1>hire me!</h1>
-      <h2>my name is <span class="baska"><%= link_to "baska", root_path %></span>, i am a developer</h2>
     </div>
-    <div class="container">
-      <div id="sidebar">
+    <div class="menu">
         <nav>
           <ul>
             <li><%= link_to "home", root_path %></li>
             <li><%= link_to "resume", resume_path %></li>
-            <li><%= link_to "contact", contact_path %></li>
+            <li><a href="#contact">contact</a></li>
 
             <% if logged_in? %>
               <li><%= link_to"Profile", user_path(current_user) %></li>
             <% end %>
           </ul>
         </nav>
-        </div>
         <div id="main-content">
           <div id="header">
             <div class="buttons">

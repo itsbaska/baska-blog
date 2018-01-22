@@ -1,13 +1,14 @@
 html {
-  background-color: #e25957;
+  /*background: linear-gradient(to bottom right, #efefbb, #efefbb);*/
   font-family: 'Lato', sans-serif;
+  background: linear-gradient(to bottom right, #efefbb, #d4d3dd);
 }
 
 .container {
   background-color: #fff;
-  filter: drop-shadow(0 10px 10px #5b1615);
+  filter: drop-shadow(0 10px 10px #8a8896);
   padding: 5%;
-  margin: 5%;
+  margin: 0 0 20px 0;
   box-sizing: border-box;
 }
 
@@ -29,6 +30,16 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  padding-bottom: 20px;
+}
+
+.menu {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  height: 40px;
+  z-index: 1;
+  margin: 20px 0;
 }
 
 nav ul {
@@ -37,47 +48,111 @@ nav ul {
 }
 
 nav li {
-  width: 30px;
+  width: 80px;
+  text-align: center;
   list-style: none;
   margin: 0 25px;
   padding: 0;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+  text-transform: uppercase;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav li:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+nav li:hover:after {
+  width: 100%;
+  background: blue;
 }
 
 nav a:link,
 .contact a:link {
   text-decoration: none;
-  color: #000;
-  font-family: 'Lato', sans-serif;
+  color: blue;
   font-weight: 900;
+  letter-spacing: 1.5px;
 }
 
 nav a:visited,
 .contact a:visited {
   text-decoration: none;
-  color: #000;
+  color: blue;
 }
 
 .sign {
-  color: #fff;
+  color: blue;
   text-align: center;
   font-weight: 900;
 }
 
 .sign h1 {
   font-size: 8em;
-  padding-bottom: 0;
-  margin-bottom: 0;
+  padding-top: 0;
+  margin-top: 0;
 }
 
-.sign h2 {
+.menu a {
+  color: #fff;
+}
+
+.about {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  align-items: start;
+  justify-content: space-around;
+}
+
+.about-text {
+  font-weight: 900;
   font-size: 2em;
 }
 
-#logo img {
-  width: 50px;
-  position: absolute;
-  right: 3em;
-  top: 3em;
+.resume {
+  width: 80%;
+  display: grid;
+  margin: 0 auto;
+  grid-gap: 20px;
+  grid-template-columns: 40% 40%;
+  grid-template-areas:
+    'resume-item-1 resume-item-2'
+    'resume-item-1 resume-item-3'
+    'resume-item-1 resume-item-4';
+
+  align-items: start;
+  justify-content: space-around;
+}
+
+.experience {
+  grid-area: 'resume-item-1';
+  align-self: start;
+  justify-self: stretch;
+}
+
+.skills {
+  grid-area: 'resume-item-2';
+  align-self: start;
+}
+
+.education {
+  grid-area: 'resume-item-3';
+  align-self: start;
+}
+
+.projects {
+  grid-area: 'resume-item-4';
+  align-self: start;
 }
 
 .resume-row h1 {
@@ -106,11 +181,13 @@ nav a:visited,
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
+  justify-content: start;
+  align-items: start;
 }
 
-.skills li {
+.skills li,
+.skills h3 {
+  margin-right: 25px;
   /*display: flex;*/
   padding: 0;
 }
@@ -118,18 +195,37 @@ nav a:visited,
 .contact {
   text-align: center;
   font-weight: 300;
+  border: 4px solid #fff;
+  width: 20%;
+  padding: 5%;
+  margin: 5% auto;
+}
+
+a:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+a:hover:after {
+  width: 100%;
+  background: blue;
 }
 
 .baska a:link {
   text-decoration: none;
-  color: #fff;
+  color: blue;
 }
 
 .baska a:visited {
   text-decoration: none;
-  color: #fff;
+  color: blue;
 }
 
-.baska a:hover {
-  border-bottom: 4px solid #fff;
+.baska-portrait {
+  border-radius: 50%;
+  padding-bottom: 20px;
 }
