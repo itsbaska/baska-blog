@@ -1,5 +1,4 @@
 html {
-  /*background: linear-gradient(to bottom right, #efefbb, #efefbb);*/
   font-family: 'Lato', sans-serif;
   background: linear-gradient(to bottom right, #efefbb, #d4d3dd);
 }
@@ -33,6 +32,23 @@ nav {
   padding-bottom: 20px;
 }
 
+a:after {
+  /* this is the box underneath any link*/
+  content: '';
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  background: blue;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+a:hover:after {
+  /* this is the box underneath any link*/
+  width: 100%;
+  background: black;
+}
+
 .menu {
   position: -webkit-sticky;
   position: sticky;
@@ -48,32 +64,14 @@ nav ul {
 }
 
 nav li {
-  width: 80px;
+  /*width: 80px;*/
   text-align: center;
   list-style: none;
   margin: 0 25px;
-  padding: 0;
   display: inline-block;
   position: relative;
   padding-bottom: 3px;
   text-transform: uppercase;
-}
-
-nav li:last-child {
-  margin-right: 0;
-}
-
-nav li:after {
-  content: '';
-  display: block;
-  margin: auto;
-  height: 3px;
-  width: 0px;
-  transition: width 0.5s ease, background-color 0.5s ease;
-}
-nav li:hover:after {
-  width: 100%;
-  background: blue;
 }
 
 nav a:link,
@@ -102,9 +100,9 @@ nav a:visited,
   margin-top: 0;
 }
 
-.menu a {
+/*.menu a {
   color: #fff;
-}
+}*/
 
 .about {
   margin: 0 auto;
@@ -199,30 +197,6 @@ nav a:visited,
   width: 20%;
   padding: 5%;
   margin: 5% auto;
-}
-
-a:after {
-  content: '';
-  display: block;
-  margin: auto;
-  height: 3px;
-  width: 0px;
-  background: transparent;
-  transition: width 0.5s ease, background-color 0.5s ease;
-}
-a:hover:after {
-  width: 100%;
-  background: blue;
-}
-
-.baska a:link {
-  text-decoration: none;
-  color: blue;
-}
-
-.baska a:visited {
-  text-decoration: none;
-  color: blue;
 }
 
 .baska-portrait {
