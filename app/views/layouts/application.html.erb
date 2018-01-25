@@ -18,9 +18,9 @@
     <div class="menu">
         <nav>
           <ul>
-            <li><%= link_to "home", root_path %></li>
-            <li><%= link_to "resume", resume_path %></li>
-            <li><a href="#contact">contact</a></li>
+            <li class="underline"><%= link_to "home", root_path %></li>
+            <li class="underline"><a href="#resume">resume</a></li>
+            <li class="underline"><a href="#contact">contact</a></li>
 
             <% if logged_in? %>
               <li><%= link_to"Profile", user_path(current_user) %></li>

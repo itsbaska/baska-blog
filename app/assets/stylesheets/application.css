@@ -1,6 +1,6 @@
 html {
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(to bottom right, #efefbb, #d4d3dd);
+  background: #edeff2;
 }
 
 .container {
@@ -32,18 +32,18 @@ nav {
   padding-bottom: 20px;
 }
 
-a:after {
+.underline a:after {
   /* this is the box underneath any link*/
   content: '';
   display: block;
-  margin: auto;
+  /*margin: auto;*/
   height: 3px;
   width: 0px;
   background: blue;
   transition: width 0.5s ease, background-color 0.5s ease;
 }
 
-a:hover:after {
+.underline a:hover:after {
   /* this is the box underneath any link*/
   width: 100%;
   background: black;
@@ -100,16 +100,14 @@ nav a:visited,
   margin-top: 0;
 }
 
-/*.menu a {
-  color: #fff;
-}*/
-
 .about {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 40% 40%;
   align-items: start;
   justify-content: space-around;
+  margin-bottom: 100px;
+  background-size: cover;
 }
 
 .about-text {
@@ -121,15 +119,15 @@ nav a:visited,
   width: 80%;
   display: grid;
   margin: 0 auto;
-  grid-gap: 20px;
-  grid-template-columns: 40% 40%;
+  grid-row-gap: 40px;
+  grid-column-gap: 40px;
+  grid-template-columns: 50% 50%;
   grid-template-areas:
     'resume-item-1 resume-item-2'
     'resume-item-1 resume-item-3'
     'resume-item-1 resume-item-4';
-
   align-items: start;
-  justify-content: space-around;
+  justify-content: stretch;
 }
 
 .experience {
@@ -140,17 +138,17 @@ nav a:visited,
 
 .skills {
   grid-area: 'resume-item-2';
-  align-self: start;
+  /*align-self: start;*/
 }
 
 .education {
   grid-area: 'resume-item-3';
-  align-self: start;
+  /*align-self: start;*/
 }
 
 .projects {
   grid-area: 'resume-item-4';
-  align-self: start;
+  /*align-self: start;*/
 }
 
 .resume-row h1 {
@@ -190,13 +188,25 @@ nav a:visited,
   padding: 0;
 }
 
+.underline {
+  display: block;
+}
+
 .contact {
   text-align: center;
   font-weight: 300;
   border: 4px solid #fff;
-  width: 20%;
   padding: 5%;
   margin: 5% auto;
+}
+
+.contact ul {
+  margin: 0 auto;
+}
+
+.contact li {
+  width: 40%;
+  margin: 25px auto;
 }
 
 .baska-portrait {
