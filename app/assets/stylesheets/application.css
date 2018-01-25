@@ -11,6 +11,14 @@ html {
   box-sizing: border-box;
 }
 
+.about-container {
+  background-color: #edeff2;
+  filter: drop-shadow(0 10px 10px #8a8896);
+  padding: 5%;
+  margin: 0 0 20px 0;
+  box-sizing: border-box;
+}
+
 ul {
   padding-left: 0;
 }
