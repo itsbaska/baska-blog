@@ -10,10 +10,8 @@ class CommentsController < ApplicationController
       ep "i saved"
       redirect_to post_path(@post)
     else
-      flash[:notice] = "Error creating comment: #{@comment.errors.full_messages}"
-      # render "posts/show"
+      flash[:notice] = @comment.errors.full_messages
       redirect_to(@post) and return
-
     end
   end
 

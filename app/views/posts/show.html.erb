@@ -3,8 +3,9 @@
     <%= @post.title %>
   </h1>
 
-  <p class="date">
-    Submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= link_to @post.author.username, user_path %>
+  <p>
+    <span class="date">
+    Submitted <%= time_ago_in_words(@post.created_at) %> ago by</span> <%= link_to @post.author.username, user_path %>
     <% if authorized?(@post.author) %>
     | <%= link_to 'Edit', edit_post_path(@post) %>
     | <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -12,13 +13,13 @@
   </p>
 
   <p class="body">
-    <%= @post.body %>
+    <%= @post.body.html_safe %>
   </p>
   <div id="comments">
     <h2><%= @post.comments.count %> Comments</h2>
     <%= render @post.comments %>
 
-    <h3>Add a Comment</h3>
+    <h2>Add a Comment</h2>
     <%= render "comments/form" %>
   </div>
 </div>
