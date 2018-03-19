@@ -1,135 +1,63 @@
+.brand-logo {
+  font-weight: bold;
+}
+
+.nav-wrapper {
+  background-color: #212121;
+  padding: 0 5%;
+}
+
+.page-footer {
+  margin-top: 40px;
+  background-color: #e8eaf6 !important;
+  color: #212121 !important;
+}
+
 html {
-  background-color: #e25957;
   font-family: 'Lato', sans-serif;
+  height: 100%;
 }
 
-.container {
-  background-color: #fff;
-  filter: drop-shadow(0 10px 10px #5b1615);
-  padding: 5%;
-  margin: 5%;
-  box-sizing: border-box;
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-ul {
-  padding-left: 0;
-}
-
-li {
-  list-style: none;
+main {
+  flex: 1 0 auto;
 }
 
 h1 {
-  font-weight: 900;
+  font-size: 1.8rem !important;
+  font-weight: bold !important;
+}
+h2 {
+  font-size: 1.5rem !important;
 }
 
-nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+h4 {
+  font-size: 1.25rem !important;
 }
-
-nav ul {
-  display: flex;
-  padding: 0;
-}
-
-nav li {
-  width: 30px;
-  list-style: none;
-  margin: 0 25px;
-  padding: 0;
-}
-
-nav a:link,
-.contact a:link {
-  text-decoration: none;
-  color: #000;
-  font-family: 'Lato', sans-serif;
-  font-weight: 900;
-}
-
-nav a:visited,
-.contact a:visited {
-  text-decoration: none;
-  color: #000;
-}
-
-.sign {
-  color: #fff;
-  text-align: center;
-  font-weight: 900;
-}
-
-.sign h1 {
-  font-size: 8em;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-.sign h2 {
-  font-size: 2em;
-}
-
-#logo img {
-  width: 50px;
-  position: absolute;
-  right: 3em;
-  top: 3em;
-}
-
-.resume-row h1 {
-  color: #e25957;
-}
-
-.resume-row h2 {
-  font-size: 0.9em;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.resume-row h3 {
-  padding: 0;
-  font-size: 0.8em;
-  letter-spacing: 1.5px;
-  color: #494c4c;
+h3 {
+  font-size: 1rem !important;
   font-style: italic;
 }
 
-.experience li {
-  padding-bottom: 20px;
+.comment-time,
+.date {
+  font-style: italic;
+  color: #757575;
+}
+.resume h2 {
+  font-size: 1rem !important;
 }
 
-.skills-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
+p,
+.resume li {
+  font-size: 1rem !important;
 }
 
-.skills li {
-  /*display: flex;*/
-  padding: 0;
-}
-
-.contact {
-  text-align: center;
-  font-weight: 300;
-}
-
-.baska a:link {
-  text-decoration: none;
-  color: #fff;
-}
-
-.baska a:visited {
-  text-decoration: none;
-  color: #fff;
-}
-
-.baska a:hover {
-  border-bottom: 4px solid #fff;
+.comment {
+  border-bottom: 1px solid #9e9e9e;
 }

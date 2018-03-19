@@ -8,42 +8,57 @@
     <%= javascript_include_tag 'application' %>
     <script src="https://use.fontawesome.com/0cfcb9aae2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:300i,400,900" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+   
   </head>
 
   <body>
-    <div class="sign">
-      <h1>hire me!</h1>
-      <h2>my name is <span class="baska"><%= link_to "baska", root_path %></span>, i am a developer</h2>
-    </div>
-    <div class="container">
-      <div id="sidebar">
-        <nav>
-          <ul>
-            <li><%= link_to "home", root_path %></li>
-            <li><%= link_to "resume", resume_path %></li>
-            <li><%= link_to "contact", contact_path %></li>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">baska.</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><%= link_to "home", root_path %></li>
+          <li><%= link_to "posts", posts_path %></li>
+          <li><%= link_to "resume", resume_path %></a></li>
+          <li><%= link_to "contact", contact_path %></a></li>
 
-            <% if logged_in? %>
-              <li><%= link_to"Profile", user_path(current_user) %></li>
-            <% end %>
-          </ul>
-        </nav>
-        </div>
-        <div id="main-content">
-          <div id="header">
-            <div class="buttons">
-              <% if logged_in?%>
-                <button class="button"><%= link_to "New Post", new_post_path %></button>
-                <button class="button"><%= link_to "Logout", logout_path, method: :delete %></button>
-              <% end %>
-            </div>
-          </div>
-          <% flash.each do |name, message| %>
-            <%= content_tag(:div, message, class: "alert") %>
+          <% if logged_in? %>
+            <li><%= link_to"profile", user_path(current_user) %></li>
           <% end %>
-        </div>
+          <% if logged_in?%>
+              <li><a><%= link_to "new post", new_post_path %></a></li>
+              <li><a><%= link_to "logout", logout_path, method: :delete %></a></li>
+            <% end %>
+        </ul>
       </div>
+    </nav>
+    <main class="container valign-wrapper">
       <%= yield %>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </body>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="grey-text darken-4">Footer Content</h5>
+          <p class="grey-text text-darken-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="grey-text darken-4">Links</h5>
+          <ul>
+            <li><a href="mailto:baskabatbold@gmail.com" class="grey-text text-darken-4">baskabatbold@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/itsbaska" class="grey-text text-darken-4">linkedin.com/in/itsbaska</a></li>
+            <li><a href="https://www.instagram.com/itsbaska" class="grey-text text-darken-4">@itsbaska</a></li>
+          </ul>
+         </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      <p class="grey-text darken-4">© 2018 Baska</p>
+      </div>
+    </div>
+  </footer>
 </html>

@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @errors = @post.errors.full_messages || @post.comments.errors.full_messages
   end
 
   def edit
