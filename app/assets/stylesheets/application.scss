@@ -1,17 +1,17 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @import "materialize/components/color-variables";
 @import 'materialize';
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
+$button-color: #845ec2;
+$gradient: linear-gradient(to right top, #845ec2, #e65faa, #ff8080, #ffbb61, #f9f871);
+
 nav {
-  background-image:  linear-gradient(to right top, #845ec2, #e65faa, #ff8080, #ffbb61) !important;
+  background-color: white;
   box-shadow: none !important;
 }
 
 nav a {
-  color: #fff !important;
+  color: #000 !important;
 }
 
 nav li {
@@ -26,6 +26,10 @@ nav ul a {
 nav ul a:hover {
   background-color: transparent;
   border-bottom: 3px solid;
+}
+
+html {
+  background-image: $gradient !important;
 }
 
 body {
@@ -60,24 +64,18 @@ main {
   box-shadow: 5px 5px #845ec2;
 }
 .page-footer a {
-  background: linear-gradient(to right, #845ec2 0%, #e65faa 50%, #ff8080 100%);
-  background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  color: #fff
 }
 
 .page-footer svg {
   margin-right: 10px;
-  color: #845ec2;
 }
 
 h1 {
   font-size: 1.8rem !important;
-  font-weight: bold;
-  background: linear-gradient(to right, #845ec2 0%, #e65faa 30%, #ff8080 70%,  #f9f871 100%);
-  background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  font-weight: bold !important;
+  color: #fff;
+  text-shadow: 2px 2px #845ec2;
 }
 
 .secondary-title {
@@ -92,31 +90,24 @@ h1 {
 }
 
 label {
+  color: #fff;
   font-size: 1rem !important;
 }
 
 textarea {
   padding: 20px;
+  background-color: #fff;
   min-height: 200px;
 }
 
 input[type=text] {
-  border-bottom: 1px solid #845ec2 !important;
+  border-bottom: 1px solid #fff !important;
 }
 
 input[type=text]:focus {
-  box-shadow:  0 2px 0 0 #845ec2 !important;
+  box-shadow:  0 2px 0 0 #fff !important;
 }
-
-
-input[type=submit] {
-	background: #845ec2; 
-}
-
-h2 {
-  font-size: 1.5rem !important;  
-}
-h3, h4 {
+h4 {
   font-size: 1.25rem !important;
 }  
 
@@ -126,17 +117,20 @@ h3, h4 {
 .brand-logo {
   font-weight: bold;
   font-size: 20vw;
-	color: #fff;
+  background: $gradient;
+  background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 
 .comment-time,
 .date {
   font-style: italic;
-  color: gray;
+  color: #845ec2;
 }
 
 .comment {
-  border-bottom: 1px solid lightgray;
-  margin: 50px 0;
+  border-bottom: 1px solid #fff;
 }
+

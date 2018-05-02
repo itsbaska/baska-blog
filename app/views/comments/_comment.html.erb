@@ -1,6 +1,6 @@
 <div class="comment">
   <div class="comment-content">
-    <p class="comment-body"><%= comment.body %></p>
+    <p class="comment-body"><%= raw comment.body %></p>
     <p>
     <span class="comment-time"><%= time_ago_in_words(comment.created_at) %> ago by</span>
     <% if comment.commentor %> 
