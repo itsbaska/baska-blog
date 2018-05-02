@@ -1,6 +1,18 @@
 <% @posts.each do|post| %>
-  <div class="post-wrapper">
-    <h2 class="title"><%= link_to post.title, post %></h2>
-    <p class="date"><%= post.created_at.strftime("%B, %d, %y") %></p>
+  <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://placeholdit.co//i/555x150">
+          <span class="card-title"><%= link_to post.title, post %></span>
+        </div>
+        <div class="card-content">
+          <p class="date"><%= post.created_at.strftime("%B, %d, %Y") %></p>
+        </div>
+        <div class="card-action">
+          <%= link_to "Read more", post %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
